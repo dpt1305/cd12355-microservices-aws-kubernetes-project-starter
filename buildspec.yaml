@@ -8,8 +8,8 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t test-coworking-analytics ./analytics
-      - docker tag test-coworking-analytics:$CODEBUILD_BUILD_NUMBER $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:$CODEBUILD_BUILD_NUMBER
+      - docker tag test-coworking-analytics:$CODEBUILD_BUILD_NUMBER 081322589116.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:$CODEBUILD_BUILD_NUMBER
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:$CODEBUILD_BUILD_NUMBER
+      - docker push 081322589116.dkr.ecr.us-east-1.amazonaws.com/test-coworking-analytics:$CODEBUILD_BUILD_NUMBER
