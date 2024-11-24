@@ -9,7 +9,7 @@ phases:
       - echo Building the Docker image...
       - docker build -t test-coworking-analytics ./analytics
       - docker tag uda-repo:latest 081322589116.dkr.ecr.us-east-1.amazonaws.com/uda-repo:latest
-  post-build:
+  post_build:
     commands:
       - echo Pushing the Docker image...
       - docker push 081322589116.dkr.ecr.us-east-1.amazonaws.com/uda-repo:latest
