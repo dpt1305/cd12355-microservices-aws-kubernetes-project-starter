@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 081322589116.dkr.ecr.us-east-1.amazonaws.com
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t test-coworking-analytics ./analytics
+      - docker tag uda-repo:latest 081322589116.dkr.ecr.us-east-1.amazonaws.com/uda-repo:latest
+  post-build:
+    commands:
+      - echo Pushing the Docker image...
+      - docker push 081322589116.dkr.ecr.us-east-1.amazonaws.com/uda-repo:latest
