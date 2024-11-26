@@ -16,8 +16,11 @@ aws codebuild create-project \
         "auth": {
             "type": "OAUTH",
             "resource": "arn:aws:codeconnections:us-east-1:081322589116:connection/1199e1b4-fecc-440d-9f33-dcba25509ed6"
-            }
-        }' \
+        },
+        "gitSubmodulesConfig": {
+            "fetchSubmodules": true
+        }
+    }' \
     --artifacts type=NO_ARTIFACTS \
     --environment type=LINUX_CONTAINER,image=aws/codebuild/standard:6.0,computeType=BUILD_GENERAL1_SMALL \
     --service-role arn:aws:iam::081322589116:role/uda-codebuild-role \
