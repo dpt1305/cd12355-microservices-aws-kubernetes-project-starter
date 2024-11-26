@@ -7,11 +7,3 @@ data:
   DB_PORT: "5432"
   DB_USERNAME: 'myuser'
   DB_HOST: 'postgresql-service'
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: db-secret
-type: Opaque
-data:
-  DB_PASSWORD: bXlwYXNzd29yZA==
